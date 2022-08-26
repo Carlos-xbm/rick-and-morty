@@ -1,8 +1,9 @@
 const charactersService = require('../services/characters.service');
+const mongoose = require('mongoose');
 
 /* GET_ALL */
-const findAllCharactersController = (req, res) => {
-  const characters = charactersService.findAllCharactersService();
+const findAllCharactersController = async (req, res) => {
+  const characters = await charactersService.findAllCharactersService();
 
   if (characters.length == 0) {
     return res.status(404).send({ message: 'Não existe nenhum character cadastrado' });
@@ -12,14 +13,14 @@ const findAllCharactersController = (req, res) => {
 };
 
 /* GET_BY_ID */
-const findByIdCharacterController = (req, res) => {
-  const idParam = +req.params.id;
+const findByIdCharacterController = async (req, res) => {
+  const idParam = req.params.id;
 
-  if (!idParam) {
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
-  const searchCharacter = charactersService.findByIdCharacterService(idParam);
+  const searchCharacter = await charactersService.findByIdCharacterService(idParam);
 
   if (!searchCharacter) {
     return res.status(404).send({ message: 'Character não existe' });

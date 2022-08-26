@@ -1,28 +1,15 @@
-const characters = [
-  {
-    id: 1,
-    nome: 'Glar',
-    urlDaImagem: 'http://www.glar.com.br',
-  },
-  {
-    id: 2,
-    nome: 'Jerry Smith',
-    urlDaImagem: 'http://www.jerrysmith.com.br',
-  },
-  {
-    id: 3,
-    nome: 'Japheth',
-    urlDaImagem: 'http://www.japheth.com.br',
-  },
-];
+const Character = require('../models/Character');
 
-const findAllCharactersService = () => {
+const findAllCharactersService = async () => {
+  const characters = await Character.find();
   return characters;
 };
 
-const findByIdCharacterService = (idParam) => {
-  return characters.find((character) => character.id == idParam);
+const findByIdCharacterService = async (idParam) => {
+  const character = await Character.findById(idParam);
+  return character;
 };
+
 const createCharacterService = (newCharacter) => {
   const newId = characters.length + 1;
   newCharacter.id = newId;
