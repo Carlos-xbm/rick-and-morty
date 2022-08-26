@@ -1,23 +1,23 @@
 const Characters = require('../models/Characters');
 
 const findAllCharactersService = async () => {
-  const characters = await Characters.find();
-  return characters;
+  const allCharacters = await Characters.find();
+  return allCharacters;
 };
 
 const findByIdCharacterService = async (idParam) => {
-  const character = await Characters.findById(idParam);
-  return character;
+  const idCharacter = await Characters.findById(idParam);
+  return idCharacter;
 };
 
 const createCharacterService = async (newCharacter) => {
-  const characterCreated = await Characters.create(newCharacter);
-  return characterCreated;
+  const createCharacter = await Characters.create(newCharacter);
+  return createCharacter;
 };
 
-const updateCharacterService = async (id, characterEdited) => {
-  const characterUpdate = await Characters.findByIdAndUpdate(id, characterEdited);
-  return characterUpdate;
+const updateCharacterService = async (id, editCharacter) => {
+  const updateCharacter = await Characters.findByIdAndUpdate(id, editCharacter);
+  return updateCharacter;
 };
 
 const deleteCharacterService = async (id) => {

@@ -1,11 +1,11 @@
-const charactersService = require('../services/characters.service');
+const serviceCharacters = require('../services/characters.service');
 const mongoose = require('mongoose');
 
 /* GET_ALL */
 const findAllCharactersController = async (req, res) => {
-  const characters = await charactersService.findAllCharactersService();
+  const allCharacters = await serviceCharacters.findAllCharactersService();
 
-  if (characters.length == 0) {
+  if (allCharacters.length == 0) {
     return res.status(404).send({ message: 'Não existe nenhum character cadastrado' });
   }
 
@@ -20,24 +20,24 @@ const findByIdCharacterController = async (req, res) => {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
-  const searchCharacter = await charactersService.findByIdCharacterService(idParam);
+  const idCharacter = await serviceCharacters.findByIdCharacterService(idParam);
 
-  if (!searchCharacter) {
+  if (!idCharacter) {
     return res.status(404).send({ message: 'Character não existe' });
   }
 
-  res.send(searchCharacter);
+  res.send(idCharacter);
 };
 
 /* CREATE */
 const createCharacterController = async (req, res) => {
-  const character = req.body;
+  const createCharacter = req.body;
 
-  if (!character || !character.nome || !character.urlDaImagem) {
+  if (!createCharacter || !createCharacter.nome || !createCharacter.urlDaImagem) {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
 
-  const newCharacter = await charactersService.createCharacterService(character);
+  const newCharacter = await serviceCharacters.createCharacterService(createCharacter);
   res.status(201).send(newCharacter);
 };
 
@@ -49,13 +49,13 @@ const updateCharacterController = async (req, res) => {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
-  const characterEdit = req.body;
+  const editCharacter = req.body;
 
-  if (!characterEdit || !characterEdit.nome || !characterEdit.urlDaImagem) {
+  if (!editCharacter || !editCharacter.nome || !editCharacter.urlDaImagem) {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
 
-  const updateCharacter = await charactersService.updateCharacterService(idParam, characterEdit);
+  const updateCharacter = await serviceCharacters.updateCharacterService(idParam, editCharacter);
   res.send(updateCharacter);
 };
 
@@ -67,7 +67,7 @@ const deleteCharacterController = async (req, res) => {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
-  await charactersService.deleteCharacterService(idParam);
+  await serviceCharacters.deleteCharacterService(idParam);
 
   res.send({ message: 'Character deleted' });
 };
