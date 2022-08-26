@@ -30,22 +30,22 @@ const findByIdCharacterController = async (req, res) => {
 };
 
 /* CREATE */
-const createCharacterController = (req, res) => {
+const createCharacterController = async (req, res) => {
   const character = req.body;
 
   if (!character || !character.nome || !character.urlDaImagem) {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
 
-  const newCharacter = charactersService.createCharacterService(character);
+  const newCharacter = await charactersService.createCharacterService(character);
   res.status(201).send(newCharacter);
 };
 
 /* UPDATE */
-const updateCharacterController = (req, res) => {
-  const idParam = Number(req.params.id);
+const updateCharacterController = async (req, res) => {
+  const idParam = req.params.id;
 
-  if (!idParam) {
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
@@ -55,19 +55,19 @@ const updateCharacterController = (req, res) => {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
 
-  const updateCharacter = charactersService.updateCharacterService(idParam, characterEdit);
+  const updateCharacter = await charactersService.updateCharacterService(idParam, characterEdit);
   res.send(updateCharacter);
 };
 
 /* DELETE */
-const deleteCharacterController = (req, res) => {
-  const idParam = +req.params.id;
+const deleteCharacterController = async (req, res) => {
+  const idParam = req.params.id;
 
-  if (!idParam) {
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
     return res.status(400).send({ message: 'Id invalido' });
   }
 
-  charactersService.deleteCharacterService(idParam);
+  await charactersService.deleteCharacterService(idParam);
 
   res.send({ message: 'Character deleted' });
 };
