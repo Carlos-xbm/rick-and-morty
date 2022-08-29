@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectMongoDB = () => {
   mongoose
-    .connect('mongodb://localhost:27017/api_rick-and-morty', {
+    .connect(process.env.URL_DATABASE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
