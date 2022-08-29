@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const routes = require('./src/routes/characters.route');
+const charactersRoutes = require('./src/characters/routes/characters.route');
+const usersRoutes = require('./src/users/routes/users.route');
 const connectMongoDB = require('./src/database/database');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -18,7 +19,7 @@ app.use(cors());
 app.use('/api-docs', swaggerUi.serve);
 app.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
-app.use('/rick-and-morty', routes);
+app.use('/rick-and-morty', charactersRoutes, usersRoutes);
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
