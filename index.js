@@ -19,7 +19,8 @@ app.use(cors());
 app.use('/api-docs', swaggerUi.serve);
 app.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
-app.use('/rick-and-morty', charactersRoutes, usersRoutes);
+app.use('/users', usersRoutes);
+app.use('/characters', charactersRoutes);
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);

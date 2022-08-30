@@ -11,11 +11,11 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/api-docs",
+      "url": "http://localhost:3000/rick-and-morty",
       "description": "API de teste"
     },
     {
-      "url": "https://rick-and-morty-xbm.herokuapp.com/api-docs",
+      "url": "https://rick-and-morty-xbm.herokuapp.com/rick-and-morty",
       "description": "API de produção"
     }
   ],
