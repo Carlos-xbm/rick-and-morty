@@ -15,7 +15,7 @@
       "description": "API de teste"
     },
     {
-      "url": "http://rick-and-morty-xbm.herokuapp.com",
+      "url": "https://rick-and-morty-xbm.herokuapp.com",
       "description": "API de produção"
     }
   ],
