@@ -11,11 +11,11 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/rick-and-morty",
+      "url": "http://localhost:3000/api-docs",
       "description": "API de teste"
     },
     {
-      "url": "https://git.heroku.com/rick-and-morty-xbm.git",
+      "url": "https://rick-and-morty-xbm.herokuapp.com/api-docs",
       "description": "API de produção"
     }
   ],
@@ -90,7 +90,7 @@
     },
     "/auth/login": {
       "post": {
-        "summary": "Entrar no Twitter",
+        "summary": "Entrar no Rick and Morty",
         "description": "Rota responsável fazer o login de um user cadastrado",
         "tags": ["Auth"],
         "requestBody": {
@@ -102,7 +102,7 @@
               "examples": {
                 "User": {
                   "value": {
-                    "email": "clima@gmail.com",
+                    "email": "carlos-xbm@exemple.com",
                     "password": "12345"
                   }
                 }
@@ -283,45 +283,45 @@
           }
         }
       }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     },
-    "components": {
-      "securitySchemes": {
-        "bearerAuth": {
-          "type": "http",
-          "scheme": "bearer",
-          "bearerFormat": "JWT"
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
         }
       },
-      "schemas": {
-        "User": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "string"
-            }
-          }
-        },
-        "characters": {
-          "type": "object",
-          "properties": {
-            "nome": {
-              "type": "String"
-            },
-            "urlDaImagem": {
-              "type": "String"
-            }
+      "characters": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "String"
+          },
+          "urlDaImagem": {
+            "type": "String"
           }
         }
       }
