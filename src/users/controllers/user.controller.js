@@ -1,5 +1,23 @@
+const userService = require('../services/user.service');
+
 const createUserController = async (req, res) => {
-  res.send({ message: 'Create ok' });
+  const { name, userName, email, password, avatar } = req.body;
+
+  if (!name || !userName || !email || !password || !avatar) {
+    return res.status(400).send({ message: 'Preencha todos os campos' });
+  }
+
+  const foundUser = await userService.findByEmailUserService(email);
+  if (foundUser) {
+    return res.status(400).send({ message: 'Usuario ja existe' });
+  }
+
+  const user = await userService.createUserService(req.body).catch((err) => console.log(err.message));
+  if (!user) {
+    return res.status(400).send({ message: 'Error ao criar Usuario' });
+  }
+
+  res.status(201).send(user);
 };
 
 const findAllUserController = async (req, res) => {
