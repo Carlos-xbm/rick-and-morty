@@ -6,7 +6,6 @@ const usersRoutes = require('./src/users/routes/users.route');
 const connectMongoDB = require('./src/database/database');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-const swaggerAutogen = require('swagger-autogen')();
 
 const port = process.env.PORT || 3000;
 const app = express();
