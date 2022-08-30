@@ -63,7 +63,7 @@
         }
       }
     },
-    "/users": {
+    "/users/": {
       "get": {
         "summary": "Buscar todos os usuários",
         "description": "Rota responsável por buscar todos os usuários",
