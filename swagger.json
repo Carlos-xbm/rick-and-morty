@@ -54,7 +54,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Object",
+                  "type": "object",
                   "$ref": "#/components/schemas/User"
                 }
               }
@@ -77,7 +77,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Array",
+                  "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/User"
                   }
@@ -131,7 +131,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Array",
+                  "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/characters"
                   }
@@ -164,7 +164,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Object",
+                  "type": "object",
                   "$ref": "#/components/schemas/characters"
                 }
               }
@@ -204,7 +204,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Object",
+                  "type": "object",
                   "$ref": "#/components/schemas/characters"
                 }
               }
@@ -252,7 +252,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "Object",
+                  "type": "object",
                   "$ref": "#/components/schemas/characters"
                 }
               }
@@ -288,7 +288,7 @@
   "components": {
     "schemas": {
       "User": {
-        "type": "Object",
+        "type": "object",
         "properties": {
           "name": {
             "type": "String"
@@ -308,7 +308,7 @@
         }
       },
       "auth":{
-        "type":"Object",
+        "type":"object",
         "properties":{
           "email":{
             "type":"String"
@@ -319,7 +319,7 @@
         }
       },
       "characters": {
-        "type": "Object",
+        "type": "object",
         "properties": {
           "nome": {
             "type": "String"
