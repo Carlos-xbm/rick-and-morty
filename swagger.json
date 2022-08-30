@@ -35,7 +35,7 @@
                 "Users": {
                   "value": {
                     "name": "Carlos Eduardo",
-                    "username": "Carlos-xbm",
+                    "userName": "Carlos-xbm",
                     "email": "carlos-xbm@exemple.com",
                     "password": "12345",
                     "avatar": "https://www.avatar.com"
@@ -293,7 +293,7 @@
           "name": {
             "type": "String"
           },
-          "username": {
+          "userName": {
             "type": "String"
           },
           "email": {
