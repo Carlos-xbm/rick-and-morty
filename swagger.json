@@ -287,7 +287,7 @@
     "/characters/search": {
       "get": {
         "summary": "Search character by name",
-        "description": "Route responsable for searching a character by name",
+        "description": "Route responsible for searching a character by name",
         "tags": ["Characters"],
         "security": [
           {
@@ -310,6 +310,13 @@
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/characters"
+                },
+                "examples": {
+                  "Character": {
+                    "value": {
+                      "nome": "Glar"
+                    }
+                  }
                 }
               }
             }
@@ -346,7 +353,7 @@
           }
         }
       },
-      "auth": {
+      "Auth": {
         "type": "object",
         "properties": {
           "email": {
@@ -357,7 +364,7 @@
           }
         }
       },
-      "characters": {
+      "Characters": {
         "type": "object",
         "properties": {
           "nome": {
