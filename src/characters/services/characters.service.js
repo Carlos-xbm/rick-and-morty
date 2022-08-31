@@ -30,11 +30,9 @@ const deleteCharacterService = async (id) => {
 };
 
 /* SEARCH */
-const findByNameCharacterService = async (nameParam) => {
-  const nameCharacter = await Characters.findOne(nameParam);
-  return nameCharacter;
+const findByNameCharacterService = async (nome) => {
+  return await Characters.findOne({ nome: nome });
 };
-
 module.exports = {
   findAllCharactersService,
   findByIdCharacterService,

@@ -51,28 +51,21 @@ const deleteCharacterController = async (req, res) => {
   res.send({ message: 'Character deleted' });
 };
 
-/* const findByNameCharacterController = async (req, res) => {
-  const nameParam = req.body;
-
-  const nameCharacter = await serviceCharacters.findByNameCharacterService(nameParam);
-
-  if (!nameCharacter) {
-    return res.status(404).send({ message: 'Character não existe' });
-  }
-
-  res.send(nameCharacter);
-};
- */
 const findByNameCharacterController = async (req, res) => {
-  const { nome } = req.body;
-  const name = await serviceCharacters.findByNameCharacterService(nome);
+  try {
+    const name = req.query.nome;
 
-  if (!name) {
-    return res.status(404).send({ message: 'Character não encontrado' });
+    const nameCharacter = await serviceCharacters.findByNameCharacterService(name);
+    if (!nameCharacter) {
+      res.status(404).send({ message: 'Nome não encontrado' });
+    } else {
+      res.status(200).send(nameCharacter);
+    }
+  } catch (err) {
+    res.status(404).send({ message: 'Erro em buscar character' });
   }
-
-  res.send({ name });
 };
+
 module.exports = {
   findAllCharactersController,
   findByIdCharacterController,
