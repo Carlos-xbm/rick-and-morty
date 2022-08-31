@@ -283,40 +283,39 @@
           }
         }
       }
-    }
-  },
-  "/search": {
-    "get": {
-      "summary": "Busca um character pelo nome",
-      "description": "Rota responsável por buscar um character pelo Nome",
-      "tags": ["Characters"],
-      "requestBody": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/characters"
-            },
-            "examples": {
-              "User": {
-                "value": {
-                  "nome": "Glar"
+    },
+    "/search": {
+      "get": {
+        "summary": "Busca um character pelo nome",
+        "description": "Rota responsável por buscar um character pelo Nome",
+        "tags": ["Characters"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/characters"
+              },
+              "examples": {
+                "User": {
+                  "value": {
+                    "nome": "Glar"
+                  }
                 }
               }
             }
           }
-        }
-      },
-      "responses": {
-        "400": {
-          "description": "Not Found"
         },
-        "200": {
-          "description": "OK"
+        "responses": {
+          "400": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK"
+          }
         }
       }
     }
   },
-
   "components": {
     "schemas": {
       "User": {
