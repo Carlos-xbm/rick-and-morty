@@ -231,14 +231,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/characters"
-              },
-              "examples": {
-                "Character": {
-                  "value": {
-                    "nome": "Glar",
-                    "urlDaImagem": "http://www.glar.com.br"
-                  }
-                }
               }
             }
           }
