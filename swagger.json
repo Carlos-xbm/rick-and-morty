@@ -284,11 +284,19 @@
         }
       }
     },
-    "/search": {
+    "/characters/search": {
       "get": {
         "summary": "Busca um character pelo nome",
         "description": "Rota responsável por buscar um character pelo Nome",
         "tags": ["Characters"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "nome",
+            "type": "string",
+            "required": true
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
