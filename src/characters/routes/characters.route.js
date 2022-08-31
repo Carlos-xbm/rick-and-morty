@@ -8,5 +8,6 @@ route.get('/find/:id', validId, controllerCharacters.findByIdCharacterController
 route.post('/create', validObjectBody, controllerCharacters.createCharacterController);
 route.put('/update/:id', validId, validObjectBody, controllerCharacters.updateCharacterController);
 route.delete('/delete/:id', validId, controllerCharacters.deleteCharacterController);
+route.get('/search', controllerCharacters.findByNameCharacterController);
 
 module.exports = route;

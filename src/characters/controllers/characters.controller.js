@@ -51,10 +51,33 @@ const deleteCharacterController = async (req, res) => {
   res.send({ message: 'Character deleted' });
 };
 
+/* const findByNameCharacterController = async (req, res) => {
+  const nameParam = req.body;
+
+  const nameCharacter = await serviceCharacters.findByNameCharacterService(nameParam);
+
+  if (!nameCharacter) {
+    return res.status(404).send({ message: 'Character não existe' });
+  }
+
+  res.send(nameCharacter);
+};
+ */
+const findByNameCharacterController = async (req, res) => {
+  const { nome } = req.body;
+  const name = await serviceCharacters.findByNameCharacterService(nome);
+
+  if (!name) {
+    return res.status(404).send({ message: 'Character não encontrado' });
+  }
+
+  res.send({ name });
+};
 module.exports = {
   findAllCharactersController,
   findByIdCharacterController,
   createCharacterController,
   updateCharacterController,
   deleteCharacterController,
+  findByNameCharacterController,
 };
