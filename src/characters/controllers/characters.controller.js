@@ -52,8 +52,8 @@ const deleteCharacterController = async (req, res) => {
 };
 
 const findByNameCharacterController = async (req, res) => {
-  const name = req.query.name;
-  const nameCharacter = await serviceCharacters.findByNameCharacterService(name);
+  const nameChar = req.query.name;
+  const nameCharacter = await serviceCharacters.findByNameCharacterService(nameChar);
   if (!nameCharacter) {
     return res.status(404).send({ message: 'Nome não encontrado' });
   }
