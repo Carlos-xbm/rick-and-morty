@@ -11,7 +11,7 @@ const validId = (req, res, next) => {
 const validObjectBody = (req, res, next) => {
   const Character = req.body;
 
-  if (!Character || !Character.nome || !Character.urlDaImagem) {
+  if (!Character || !Character.nome || !Character.imagemUrl) {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
   next();

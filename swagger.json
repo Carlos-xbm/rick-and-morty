@@ -35,10 +35,10 @@
                 "Users": {
                   "value": {
                     "name": "Carlos Eduardo",
-                    "userName": "Carlos-xbm",
+                    "username": "Carlos-xbm",
                     "email": "carlos-xbm@exemple.com",
                     "password": "12345",
-                    "avatar": "https://www.avatar.com"
+                    "photo": "https://www.photo.com"
                   }
                 }
               }
@@ -188,7 +188,7 @@
                 "Characters": {
                   "value": {
                     "nome": "Glar",
-                    "urlDaImagem": "http://www.glar.com.br"
+                    "imagemUrl": "http://www.glar.com.br"
                   }
                 }
               }
@@ -236,7 +236,7 @@
                 "Character": {
                   "value": {
                     "nome": "Glar",
-                    "urlDaImagem": "http://www.glar.com.br"
+                    "imagemUrl": "http://www.glar.com.br"
                   }
                 }
               }
@@ -339,7 +339,7 @@
           "name": {
             "type": "String"
           },
-          "userName": {
+          "username": {
             "type": "String"
           },
           "email": {
@@ -348,7 +348,7 @@
           "password": {
             "type": "String"
           },
-          "avatar": {
+          "photo": {
             "type": "String"
           }
         }
@@ -370,7 +370,7 @@
           "nome": {
             "type": "String"
           },
-          "urlDaImagem": {
+          "imagemUrl": {
             "type": "String"
           }
         }

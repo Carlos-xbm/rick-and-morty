@@ -2,9 +2,9 @@ const userService = require('../services/user.service');
 const authService = require('../auth/auth.service');
 
 const createUserController = async (req, res) => {
-  const { name, userName, email, password, avatar } = req.body;
+  const { name, username, email, password, photo } = req.body;
 
-  if (!name || !userName || !email || !password || !avatar) {
+  if (!name || !username || !email || !password || !photo) {
     return res.status(400).send({ message: 'Preencha todos os campos' });
   }
 
@@ -20,7 +20,7 @@ const createUserController = async (req, res) => {
 
   const token = authService.generateToken(user.id);
 
-  res.status(201).send({ user: { id: user.id, name, userName, email, avatar }, token });
+  res.status(201).send({ user: { id: user.id, name, username, email, photo }, token });
 };
 
 const findAllUserController = async (req, res) => {
