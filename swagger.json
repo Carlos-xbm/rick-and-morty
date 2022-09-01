@@ -29,10 +29,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/user"
               },
               "examples": {
-                "Users": {
+                "user": {
                   "value": {
                     "name": "Carlos Eduardo",
                     "username": "Carlos-xbm",
@@ -55,7 +55,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/user"
                 }
               }
             }
@@ -79,7 +79,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/schemas/user"
                   }
                 }
               }
@@ -100,7 +100,7 @@
                 "$ref": "#/components/schemas/auth"
               },
               "examples": {
-                "User": {
+                "user": {
                   "value": {
                     "email": "carlos-xbm@exemple.com",
                     "password": "12345"
@@ -185,7 +185,7 @@
                 "$ref": "#/components/schemas/characters"
               },
               "examples": {
-                "Characters": {
+                "characters": {
                   "value": {
                     "name": "Glar",
                     "imageUrl": "http://www.glar.com.br"
@@ -233,7 +233,7 @@
                 "$ref": "#/components/schemas/characters"
               },
               "examples": {
-                "Character": {
+                "characters": {
                   "value": {
                     "name": "Glar",
                     "imageUrl": "http://www.glar.com.br"
@@ -312,7 +312,7 @@
                   "$ref": "#/components/schemas/characters"
                 },
                 "examples": {
-                  "Character": {
+                  "characters": {
                     "value": {
                       "name": "Glar"
                     }
@@ -333,7 +333,7 @@
   },
   "components": {
     "schemas": {
-      "User": {
+      "user": {
         "type": "object",
         "properties": {
           "name": {
@@ -353,7 +353,7 @@
           }
         }
       },
-      "Auth": {
+      "auth": {
         "type": "object",
         "properties": {
           "email": {
@@ -364,7 +364,7 @@
           }
         }
       },
-      "Characters": {
+      "characters": {
         "type": "object",
         "properties": {
           "name": {
