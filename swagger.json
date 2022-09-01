@@ -187,8 +187,8 @@
               "examples": {
                 "Characters": {
                   "value": {
-                    "nome": "Glar",
-                    "imagemUrl": "http://www.glar.com.br"
+                    "name": "Glar",
+                    "imageUrl": "http://www.glar.com.br"
                   }
                 }
               }
@@ -235,8 +235,8 @@
               "examples": {
                 "Character": {
                   "value": {
-                    "nome": "Glar",
-                    "imagemUrl": "http://www.glar.com.br"
+                    "name": "Glar",
+                    "imageUrl": "http://www.glar.com.br"
                   }
                 }
               }
@@ -297,7 +297,7 @@
         "parameters": [
           {
             "in": "query",
-            "name": "nome",
+            "name": "name",
             "type": "string",
             "required": true
           }
@@ -314,7 +314,7 @@
                 "examples": {
                   "Character": {
                     "value": {
-                      "nome": "Glar"
+                      "name": "Glar"
                     }
                   }
                 }
@@ -367,10 +367,10 @@
       "Characters": {
         "type": "object",
         "properties": {
-          "nome": {
+          "name": {
             "type": "String"
           },
-          "imagemUrl": {
+          "imageUrl": {
             "type": "String"
           }
         }
